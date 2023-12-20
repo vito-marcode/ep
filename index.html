@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Peasy Counter</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #counter-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        #countdown {
+            font-size: 48px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        #message {
+            font-size: 24px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div id="counter-container">
+        <h1>Easy Peasy Counter</h1>
+        <div id="countdown">1</div>
+        <div id="message">Easy Peasy left today</div>
+    </div>
+
+    <script>
+        // Set the initial count
+        var count = 1;
+
+        // Update the count every second
+        var x = setInterval(function() {
+            count--;
+
+            // Display the count
+            document.getElementById("countdown").innerHTML = count;
+
+            // Display a message when the count reaches 0
+            if (count === 0) {
+                clearInterval(x);
+                document.getElementById("message").innerHTML = "No more Easy Peasy left today!";
+            }
+        }, 10000000);
+    </script>
+</body>
+</html>
